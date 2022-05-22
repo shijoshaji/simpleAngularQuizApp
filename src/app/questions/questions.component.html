@@ -1,0 +1,116 @@
+<div class="container mt-4">
+    <div class="container card">
+        <!-- SECTION: Display username and logo -->
+        <div class="d-flex justify-content-between p-3">
+
+            <div class="image">
+                <img src="../../assets/images/icon.png" alt="" srcset="" width=" 70">
+
+            </div>
+            <div>
+
+                <i class="fa fa-user-circle" aria-hidden="true"></i><span style="font-style: italic;"> Welcome <b
+                        style="text-transform:uppercase ;">{{userName}}</b> </span>
+            </div>
+            <div class="quiz-header">
+
+                <a href="#" class="btn btn-primary"><i class="fa fa-home fa-lg" aria-hidden="true"></i>&nbsp;<i
+                        class="fa fa-google" aria-hidden="true"></i>o <i class="fa fa-h-square"
+                        aria-hidden="true"></i>ome</a>
+            </div>
+        </div>
+        <!-- !SECTION: Display username and logo -->
+        <hr>
+        <ng-container *ngIf="!isQuizCompleted">
+            <!-- SECTION: Display Points, timer etc -->
+            <div class="d-flex justify-content-around py-3">
+                <div class="score">
+                    <i class="fa fa-diamond" aria-hidden="true"></i>
+                    <b> {{points}} points</b>
+                </div>
+                <div class="question-remain">
+                    <span style="font-style:italic ;"><i class="fa fa-question-circle" aria-hidden="true"></i> Question
+                        {{currentQuestion + 1}} of {{questionList.length}}</span>
+                </div>
+                <div class="timer">
+                    <i class="fa fa-clock-o fa-xs" aria-hidden="true"></i><b style="color: red;"> {{counter}} sec's </b>
+                </div>
+
+            </div>
+
+
+            <!-- SECTION: Progress Bar -->
+            <div class="progress mb-3">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width': progressValue+'%'}">
+                    {{progressValue | number: '1.0-0'}}%
+                </div>
+            </div>
+
+            <!-- SECTION: Question & Answers -->
+            <div class="mb-2">
+                <div class="card ">
+                    <div class="card-header text-bg-primary">
+                        <h3>{{questionList[currentQuestion].questionText}}</h3>
+                    </div>
+                    <div class="card-body text-bg-light">
+                        <ol class="list-group list-group-flush"
+                            *ngFor="let item of questionList[currentQuestion].options">
+                            <li class="list-group-item" (click)="selectedAnswer(currentQuestion + 1, item)" appChangeBg
+                                [isCorrect]="item.correct">
+                                <b>{{item.text}}</b>
+                            </li>
+                        </ol>
+                        <br>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SECTION: Footer 3 Buttons -->
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-primary" (click)="prevQuestion()" [disabled]="currentQuestion===0"><i
+                        class="fa fa-chevron-circle-left fa-lg" aria-hidden="true"></i></button>
+                <button class="btn btn-primary" (click)="resetQuiz()"><i class="fa fa-repeat fa-lg"
+                        aria-hidden="true"></i></button>
+                <button class="btn btn-primary" (click)="nextQuestion(currentQuestion + 1)"
+                    [disabled]="currentQuestion===questionList.length"><i class="fa fa-chevron-circle-right fa-lg"
+                        aria-hidden="true"></i></button>
+            </div>
+        </ng-container>
+
+
+        <ng-container *ngIf="isQuizCompleted">
+            <div class="row d-flex justify-content-between">
+
+                <div class="result text-center col-md-6 col-sm-12">
+                    <div *ngIf="attemptNumber > 0" style="background-color: lightgreen;">
+                        <div><img src="../../assets/images/congrats.jpg" alt="" srcset=""></div>
+                        <h4>Congrats!!!</h4>
+                        You have Completed the Quiz <br>
+                        <b>Below are your resuls</b>
+                        <ul>
+                            <li><i class="fa fa-check-square-o" aria-hidden="true"></i>Total Question Attempted:
+                                {{attemptNumber}} out of {{questionList.length}}
+                            </li>
+                            <li><span style="color: green;"><i class="fa fa-check-circle"
+                                        aria-hidden="true"></i></span>Total Correct Answers: {{rightAnswerCount}} </li>
+                            <li><span style="color: red;"><i class="fa fa-times-circle"
+                                        aria-hidden="true"></i></span>Total
+                                Incorrect Answers: {{wrongAnswerCount}} </li>
+                            <li><span style="color: blue;"><i class="fa fa-diamond" aria-hidden="true"></i></span>Total
+                                Score: {{points}} out of {{questionList.length * 10}}</li>
+                        </ul>
+                    </div><br>
+                    <div *ngIf="attemptNumber <= 0" style="background-color: lightcoral;">
+                        <div><img src="../../assets/images/sorry.jpg" alt="" srcset=""></div>
+                        You have not attempted any questions
+                    </div>
+
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+</div>

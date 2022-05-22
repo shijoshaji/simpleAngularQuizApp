@@ -1,0 +1,106 @@
+<div class="toast-container top-0 start-50 translate-middle-x">
+    <div class="toast fade show " role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header ">
+
+            <img src="https://avatars.githubusercontent.com/u/16450263?v=4" alt="" srcset="" width="40px"
+                height="40px">&nbsp;
+
+            <strong class="me-auto"> Hi There,</strong>
+            <i class="fa fa-user" aria-hidden="true" style="color: blue;"></i> <small><a
+                    href="http://shijoshaji.herokuapp.com/" target="_blank">@shijoshaji</a></small>
+
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body bg-light">
+            This is built using
+            <img src="https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white"
+                alt="" srcset="" width="80px">
+            <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"
+                alt="" width="90px">
+            <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"
+                alt="" srcset="" width="80px">
+            <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"
+                alt="" width="70px">
+            <img src="https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white"
+                alt="" srcset="" width="100px">
+            enjoy!!!.
+            <br> <br>
+            <a href="https://github.com/shijoshaji" target="_blank"><strong><i class="fa fa-github"
+                        aria-hidden="true"></i></strong>Project Source Code</a>
+            <hr>
+            <div class="row toast-body bg-light">
+                <strong class="col-1"><a href="https://www.linkedin.com/in/shijoshaji/" target="_blank"><i
+                            class="fa fa-linkedin" aria-hidden="true"></i></a>
+                </strong>
+                <strong class="col-1"><a href="https://twitter.com/shijoshaji" target="_blank"><i class="fa fa-twitter"
+                            aria-hidden="true"></i></a>
+                </strong>
+                <strong class="col-1"><a href="https://github.com/shijoshaji" target="_blank"><i class="fa fa-github"
+                            aria-hidden="true"></i></a>
+                </strong>
+                <strong class="col-1"><a href="https://www.instagram.com/jojovms/" target="_blank"><i
+                            class="fa fa-instagram" aria-hidden="true"></i></a>
+                </strong>
+                <strong class="col-1"><a href="https://www.facebook.com/jojovms/" target="_blank"><i
+                            class="fa fa-facebook" aria-hidden="true"></i></a>
+                </strong>
+                <strong class="col-1"><a href="https://shijoshaji.hashnode.dev/" target="_blank"><i
+                            class="fa fa-hashtag" aria-hidden="true"></i></a>
+                </strong>
+                <strong class="col-1"><a href="https://dev.to/shijoshaji" target="_blank"><i class="fa fa-book"
+                            aria-hidden="true"></i></a>
+                </strong>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container bg-light py-5">
+    <h1 class="display-5">Welcome to SQA<sup>2</sup></h1>
+    <p class="col-md-8">Quiz contains 10 questions, each of is 10 points</p>
+    <div>
+        <h3>Rules:</h3>
+        <ul>
+            <li>
+                <b style="color: green;"><i class="fa fa-plus fa-xs" aria-hidden="true"></i> 10</b> points for every
+                correct answers
+            </li>
+            <li>
+                <b style="color: red;"><i class="fa fa-minus fa-xs" aria-hidden="true"></i> 5</b> points for every
+                incorrect answers
+            </li>
+            <li><i class="fa fa-clock-o fa-xs" aria-hidden="true"></i> 60 sec to answer each question</li>
+            <li>
+                <i class="fa fa-refresh fa-xs" aria-hidden="true"></i> Refreshing page will reset the quiz
+            </li>
+        </ul>
+
+        <h4 style="text-align: center;">Lets Play..</h4>
+    </div>
+    <div class="name cold-md-4 my-3">
+        <!-- <form class="container-fluid"> -->
+        <label for="">Enter Your Name: </label> &nbsp;
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon1">@</span>
+            <input #userName type="text" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"
+                [(ngModel)]="userNameValid">
+
+
+        </div>
+        <br>
+        <button (click)="startQuiz()" type="submit" class="btn btn-primary" [disabled]="userNameValid === ''"
+            [routerLink]="['/question']" routerLinkActive="router-link-active"><i class="fa fa-play"
+                aria-hidden="true"></i> Start Quiz</button>
+        <!-- </form> -->
+    </div>
+
+
+
+
+</div>

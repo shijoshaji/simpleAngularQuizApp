@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "simpleAngularQuizApp"
+    }
+  },
+  "defaultProject": "simpleAngularQuizApp",
+  "cli": {
+    "analytics": false
+  }
 }
