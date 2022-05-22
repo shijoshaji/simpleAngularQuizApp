@@ -13,7 +13,7 @@ Created a simple Quiz application in angular to leard Angular nad hosted in gith
 * Refreshing page will reset the quiz
 
 
-> Check out live [Link](https://shijoshaji.herokuapp.com/)
+> Check out live [Link](https://shijoshaji.github.io/simpleAngularQuizApp/)
 
 ## Screen Shot:
 
