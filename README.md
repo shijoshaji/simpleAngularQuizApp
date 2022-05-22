@@ -1,5 +1,26 @@
 # SimpleAngularQuizApp
 
+## Tech:
+
+> Angular, HTML,CSS, TS, Bootstrap & Fontawesome hosted in Github Pages.
+
+## About:
+
+Created a simple Quiz application in angular to leard Angular nad hosted in github pages
+* 10 points for every correct answers
+* 5 points for every incorrect answers
+* 60 sec to answer each question
+* Refreshing page will reset the quiz
+
+
+> Check out live [Link](https://shijoshaji.herokuapp.com/)
+
+## Screen Shot:
+
+> <img src='appInfo/toast.PNG'>
+> <img src='appInfo/Home.PNG'>
+> <img src='appInfo/Questions.PNG'>
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
 
 ## Development server
