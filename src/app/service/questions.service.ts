@@ -9,7 +9,7 @@ export class QuestionsService {
   constructor(private httpClient: HttpClient) { }
 
   getQuestionsJSON() {
-    return this.httpClient.get<any>('../../assets/questions.json');
+    return this.httpClient.get<any>('assets/questions.json');
   }
 }
 
